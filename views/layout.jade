@@ -1,7 +1,16 @@
 doctype 5
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    head
+        meta(charset='UTF-8')
+        title Blog
+        link(rel='stylesheet', href='stylesheets/style.css')
+    body
+        header
+            h1= title
+        nav
+            span
+                a(href='/') home
+                a(href='/login') login
+                a(href='/reg') register
+        article
+            block content
