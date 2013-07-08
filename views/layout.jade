@@ -10,7 +10,15 @@ html
         nav
             span
                 a(href='/') home
-                a(href='/login') login
-                a(href='/reg') register
+                if locals.user
+                    a(href='/post') post
+                    a(href='/logout') logout
+                else
+                    a(href='/login') login
+                    a(href='/reg') register
         article
+            if locals.success
+                div= locals.success
+            if locals.error
+                div= locals.error
             block content

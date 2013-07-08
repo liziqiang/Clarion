@@ -1,4 +1,14 @@
 extends layout
 
 block content
-  这是主页
+    for post in posts
+        p
+            h2
+                a(href='#')= post.title
+        p(class='info')
+            label 作者：
+            a(href='#')= post.name
+            label |
+            label 日期：
+            label= post.time.minute
+        p= post.post
